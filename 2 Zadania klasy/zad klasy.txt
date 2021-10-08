@@ -1,0 +1,9 @@
+%md
+
+Zadanie:
+
+1) Stworzenie klasy, która będzie wczytywała dane z excela.
+
+2) Szkolny przykład klas i dziedziczenia oraz używanie tego w praktyce.
+
+3) Stworzenie kilku instancji tej samej klasy.

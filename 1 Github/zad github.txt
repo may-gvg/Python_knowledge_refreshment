@@ -1,0 +1,14 @@
+%md
+
+Zadanie:
+
+na własnym terminalu na pokazać oparcje:
+
+1) stworzenia pierwszego branch'a z głównego (np. z master / main) 
+
+2) wrzucenie przykładowego commita + słowny opis wykonywanych operacji (np. sprawdzenie git status, 
+dodawanie plików git add itp.) 
+
+3) stworzenie drugiego brancha i wykonanie operacji powodującej konflikty np. rebase / cherry-pick / merge , 
+
+4) rozwiązanie konfliktów od początku do końca 

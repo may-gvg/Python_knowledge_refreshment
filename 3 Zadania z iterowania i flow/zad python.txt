@@ -1,0 +1,9 @@
+%md
+
+Zadanie:
+Przejść jak największą ilość zadań, mniej więcej:
+
+
+1) Napiszanie funkcji i iterowanie po elementach wraz z kontrolą flow - na przykład różnice pomiędzy continue, a break. 
+
+2)   Wykonanie jej wraz z logowaniem do plików wartości

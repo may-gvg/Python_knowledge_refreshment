@@ -1,0 +1,14 @@
+%md
+
+Zadanie:
+
+    połączyć się z dowolnym zbiorem danych, czy to offline excel file, czy online data przez API,
+
+    przetworzyć te dane
+
+    wyświetlić wizualizację np. średniej / mediany zarobków w zależności od obszaru zamieszkania / płci / poziomu wykształcenia
+    wystarczy jedno z tych (albo własna inwencja twórcza - od koloru do wyboru).
+
+    Ważne, żeby pokazać jakieś np. SQL query, przetwarzanie dataframe i proste operacje na dataframe oraz wizualzację. 
+    Należy użyć SQL, pandas i np. matplotlib albo PySpark z Azure (preferowane).
+

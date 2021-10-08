@@ -1,0 +1,8 @@
+%md
+
+Zadanie:
+
+Zrozumiec pojęcią, srednia, mediana, dominanta, korelacja, wariancja, odchylenie standardowe. 
+Umieć policzyć dla: zbiórów danych, wybranych kolumn.
+Poruszać się tym w numpy, pythonie, pandas, sql, databricksie
+
