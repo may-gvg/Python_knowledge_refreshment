@@ -1,0 +1,117 @@
+
+Command line:
+
+git init
+#tworzy repo
+
+git clone git url
+#klonuje zawartość repo z git huba
+
+git add main.py
+git add -A
+#dodaje pliki do staging area, przy komendzie add -A, pamiętać o .gitignore (venv, idea)
+
+git status
+#pokazuje status plików
+
+git -m "raz, dwa, trzy"
+git commit -am "make it better"
+#commit w wersji -am wraz z addem da plików juz raz dodanych do staging
+
+git log
+#pokazuje commity na branchu
+git log --oneline
+#pokazuje commity pod cherry-pick
+
+
+git branch
+#pokazuje branche i na którym się znajdujemy
+
+git checkout -b "nazwa"
+#tworzy nowy br o podanej nazwie
+
+git branch -M "nowa nazwa"
+#zmienia nazwę brancha
+
+git switch nazwa br
+git checkout nazwa br
+
+git remote add origin url repo github
+łączy się ze zdalnym repo na githubie
+
+git push
+wypycha commity do połączonego repo zdalnego
+
+git pull
+ściąga ostatnią wersję ze zdalnego repo
+
+git push -u origin master
+wypucha commity do konkretnego zdalnego brancha repo
+
+
+Konflikt:
+1.ściągnąć zdalne repo do siebie
+git pull
+2. otworzyć plik z konfliktem, będą dwie wrsje zaznaczone strzałkami
+3. naprawić bug
+4. wypchnąć zmiany
+git push
+
+
+Merge etapami:
+Działa na zasadzie połączenia dwóch branchy w 1
+
+1. Zrobienie nowego brancha i przejscie na niego
+git checkout -b branch1
+
+2. zakomitowanie czegos na nowym branchu
+notepad README.md
+git commit -am "zmiana nr 1"
+
+3. przejdzie na brancha master
+git checkout master
+
+4. zamergowanie i zakomitowanie brancha
+git merge branch1
+notepad README.md
+git commit -am "commit"
+
+
+Rebase
+Ogólnie rebasowanie kodu jest podobno trafną praktyką dzienną
+Rebase uklada commity liniowo
+
+etapami :
+1. Zrobienie nowego brancha i przejscie na niego
+git checkout -b branch1
+1a. przejscie na brancza master i zakomitowanie czegos
+notepad README.md
+git commit -am "zmiana nr 0"
+1b. przejscie spowrotem na nowego brancha
+git checkout branch1
+
+2. zakomitowanie czegos tam na branchu
+notepad README.md
+git commit -am "zmiana nr 1"
+2b. zrobienie rebase do wersji mastera obecniej
+git rebase master
+
+3c. zakomnitowanie zmian w branchu
+notepad README.md
+git commit -am "zmiana w branchu"
+3. przejdzie na brancha master
+git checkout master
+4. zamergowanie i zakomitowanie brancha
+git merge branch1
+notepad README.md
+git commit -am "commit"
+
+Rebase
+Ogólnie rebasowanie kodu jest podobno trafną praktyką dzienną
+git pull --rebase
+
+cherry-pick:
+Służy do wybrania konkretnego commita z innego brancha i dodanie do naszego brancha
+git log --oneline
+git switch master
+git git cherry-pick numer commita z log --oneline
