@@ -1,31 +1,29 @@
-
 # W statystyce przez populację rozumiemy zbiór wszystkich elementów,
 # których dotyczy dana analiza.
 # Próba będzie z kolei zawsze podzbiorem tej populacji.
 
 
-#Miary położenia rozkładu
+# Miary położenia rozkładu
 
 
 # 1. Średnia arytmetyczna
 # Średnią cechę danej populacji możemy obliczyć, sumując ze sobą wszystkie obserwacje,
 # a następnie dzieląc tę sumę przez liczbę wszystkich obserwacji.
 
-#Jest to najbardziej popularna miara, jednak jej wadą jest podatnośc na wartości skrajne.
-#Dla przykładu, dla zbioru: 1,2,3,4,5,6,7,8,9,66
+# Jest to najbardziej popularna miara, jednak jej wadą jest podatnośc na wartości skrajne.
+# Dla przykładu, dla zbioru: 1,2,3,4,5,6,7,8,9,66
 
-df = [1,3,4]
 # Pandas:
-df.descire()
-df.mean()
+# df.describe()
+# df.mean()
 
-#Pyspark
-df.mean()
+# Pyspark
+# df.mean()
 
-#Query sql:
-df.avg
+# Query sql:
+# df.avg
 
-#Python an piechotę:
+# Python an piechotę:
 
 
 expectancy_at_birth_list = [76.84878, 81.40732, 77.57895, 74.16341, 68.84907,
@@ -41,8 +39,7 @@ for age in expectancy_at_birth_list:
 
 average_age = sum_of_age_element / no_of_elements
 
-print("Average age: " + str(average_age))
-
+print(f'{average_age = }')
 
 # 2. Mediana
 
@@ -52,10 +49,10 @@ print("Average age: " + str(average_age))
 # będzie to średnia dwóch wartości środkowych.
 
 # Pandas:
-df.median()
+# df.median()
 
 # Pyspark
-df.median()
+# df.median()
 
 # Query sql:
 # mediana nie jest naturalną funkcją sql i w zasadzie możliwe do wyobrażenia, nie mniej bardzo złożoną querą
@@ -67,27 +64,26 @@ expectancy_at_birth_list.sort()
 num = no_of_elements // 2
 mediana = (expectancy_at_birth_list[num] + expectancy_at_birth_list[num - 1]) / 2
 
-print("Mediana age: " + str(mediana))
-
+print(f'{mediana = }')
 
 # Dominanta - moda
 # Najczęściej występująca obserwacja w rozkładzie. W przypadku zbioru,
 # gdzie kazdy element występuje taką samą ilość razy, np. 1,2,3,4,5,6,7,8 – będziemy mieć sytuację gdzie dominanata nie występuje.
 
-#Pandas:
-df.mode()
-df.value_counts()
+# Pandas:
+# df.mode()
+# df.value_counts()
 
-#Pyspark
-df.mode()
+# Pyspark
+# df.mode()
 
-#Query sql:
-#SELECT ,  COUNT(*) AS `num`
-#FROM  GROUP BY
-#ORDER BY num DESC;
+# Query sql:
+# SELECT ,  COUNT(*) AS `num`
+# FROM  GROUP BY
+# ORDER BY num DESC;
 
 
-#Python an piechotę
+# Python an piechotę
 
 # domina = max(set(expectancy_at_birth_list), key=expectancy_at_birth_list.count)
 # domina2 = expectancy_at_birth_list
@@ -107,23 +103,21 @@ df.mode()
 # lub wielkość próby pomniejszoną o jeden (w przypadku próby).
 
 
-#Odchylenie standardowe
-#W praktyce najczęściej analizie poddaje się odchylenie standardowe, czyli pierwiastek kwadratowy wariancji,
+# Odchylenie standardowe
+# W praktyce najczęściej analizie poddaje się odchylenie standardowe, czyli pierwiastek kwadratowy wariancji,
 # z uwagi na fakt, że podaje wartość w tej samej jednostce mierzalnej gdy wariacja jest w
 # jednostkach kwadratowych. Odchylenie standardowe liczymy jako pierwiastek wariancji.
 
 
+# Pandas:
+# df.describe()
+# df.std()
 
-#Pandas:
-df.describe()
-df.std()
+# Pyspark
+# df.std()
 
-#Pyspark
-df.std()
-
-#Query sql:
-df.std()
-
+# Query sql:
+# df.std()
 
 
 # Python an piechotę:
@@ -134,10 +128,10 @@ for age in expectancy_at_birth_list:
     suma += b
 wariancja = suma / (len(expectancy_at_birth_list) - 1)
 
-print("Wariancja: " + str(wariancja))
+print(f'{wariancja = }')
 
 odchylenie_standardowe = wariancja ** (1 / 2)
-print("Odchylenie standardowe: " + str(odchylenie_standardowe))
+print(f'{odchylenie_standardowe = }')
 
 fertility_rate_list = [
     1.3, 1.95, 2.466, 1.6, 2.952,
@@ -153,7 +147,7 @@ for rate in fertility_rate_list:
 
 average_fertility = sum_of_fertility_element / no_of_elements
 
-print("Average fertility: " + str(average_fertility))
+print(f'{average_fertility = }')
 
 sum = 0
 for age in fertility_rate_list:
@@ -161,12 +155,11 @@ for age in fertility_rate_list:
     sum += c
 wariancja_fertility = sum / (len(fertility_rate_list) - 1)
 
-print("Wariancja fertility: " + str(wariancja_fertility))
+print(f'{wariancja_fertility = }')
 
 odchylenie_standardowe_fertility = wariancja_fertility ** (1 / 2)
-print("Odchylenie standardowe fertility: " + str(odchylenie_standardowe_fertility))
 
-
+print(f'{odchylenie_standardowe_fertility = }')
 
 # Kowiaracja i korelacja
 # Miary kwantyfikujące relację pomiędzy dwiema zmiennymi.
@@ -183,7 +176,6 @@ print("Odchylenie standardowe fertility: " + str(odchylenie_standardowe_fertilit
 # jednej zmiennej przekłada się na wzrost wartości drugiej zmiennej.
 
 
-
 expectancy_at_birth_list2 = [76.84878, 81.40732, 77.57895, 74.16341, 68.84907,
                              73.88595, 75.26829, 76.26098, 80.57244, 65.46259,
                              67.5482, 55.02451, 76.2799, 82.29024, 69.80695,
@@ -191,15 +183,15 @@ expectancy_at_birth_list2 = [76.84878, 81.40732, 77.57895, 74.16341, 68.84907,
 
 sum = 0
 l = len(fertility_rate_list)
-for i in range(0, l):
+for i in range(l):
     sum += (expectancy_at_birth_list2[i] - average_age) * (fertility_rate_list[i] - average_fertility)
 
-result = sum / (l - 1)
+kowariancja = sum / (l - 1)
 
-print("Kowariancja: " + str(result))
+print(f'{kowariancja = }')
 
-wspolczynnik_korelacji = result / (odchylenie_standardowe - odchylenie_standardowe_fertility)
-print("Współczynnik korelacji: " + str(wspolczynnik_korelacji))
+wspolczynnik_korelacji = kowariancja / (odchylenie_standardowe - odchylenie_standardowe_fertility)
+print(f'{wspolczynnik_korelacji = }')
 
 ###0,1<|r|≤0,3 – korelacja słaba
 # Korelacja słaba - wskazuje na fakt, że dobrze się rozmnażać i poprawia to długość życia ale bez przesady
@@ -215,15 +207,13 @@ y = ochylenie_pop = 9.09
 przedzial_ufnosci = average_age - x * (y / (no_of_elements ** (1 / 2))), \
                     average_age + x * (y / (no_of_elements ** (1 / 2)))
 
-print("przedział ufności: " + str(przedzial_ufnosci))
-print(average_age)
+print(f'{przedzial_ufnosci = }')
 
 # Wartość ze znormalizowanego rozkładu normalnego odpowiadająca przyjętemu poziomowi istotności
-#EDIT
-w = average_age - (average_age - x * (y / (no_of_elements ** (1 / 2))))
-print(w)
+# EDIT
+wartosc_znormalizowana = average_age - (average_age - x * (y / (no_of_elements ** (1 / 2))))
 
-w1 = average_age - (average_age + x * (y / (no_of_elements ** (1 / 2))))
-print(w1)
+wartosc_znormalizowana1 = average_age - (average_age + x * (y / (no_of_elements ** (1 / 2))))
 
-print("Wartość ze znormalizowanego rozkładu normalnego odpowiadająca poziomowi istotności 0,05 wynosi: " + str(w))
+print(f'{wartosc_znormalizowana = }')
+print(f'{wartosc_znormalizowana1 = }')
