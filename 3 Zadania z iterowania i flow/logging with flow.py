@@ -1,59 +1,54 @@
 import logging
 
-#logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
 logging.basicConfig(filename='info.log', encoding='utf-8', level=logging.INFO)
-#logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.WARNING)
-#logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.ERROR)
-#logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.CRITICAL)
 
-# DEBUG 	Informacje potrzebne programiście
-# INFO 	Potwierdzenie, że wszystko jest w porządku
-# WARNING 	Informacja o tym, że coś się dzieje i powinniśmy podjąć jakieś akcje
-# ERROR 	Wystąpił błąd, określona funkcja jest niedostępna
-# CRITICAL 	Błąd, którego nie da się rozwiązać
+# 1. znajdz literę
+
+string = "Python"
+litera = input("podaj literę: ")
 
 
-# 1. break
-
-def break_in_python():
-    for letter in "Python":
-        if letter == "h":
+def znajdz_litere(letter):
+    for i in string:
+        if i == letter:
+            logging.info("znaleziono")
             break
-        # instrukcja breake powoduje natychmiastowe wyjście z pętli w momencie spełnienia warunku
-        logging.info("Current Letter :" + letter)
+    else:
+        logging.info("nie znaleziono")
 
 
-break_in_python()
+znajdz_litere(litera)
 
-# napisz funkcję, która pokaże pierwszych 30 liczby podzielnych przez 6 z zakresu n pierwszych 200 liczb naturalnych
+print('')
 
 
-def liczby_podzielne():
-    n = 200
+# liczby podzielne
+
+
+def liczby_podzielne(n, wystapienia, liczba):
     licznik_iteracji = 1
-    for i in range(1, n+1):
-        if i % 6 == 0:
-            if licznik_iteracji > 30:
-                break
-        logging.info("po 30 elemencie wychodzimy break z pętli")
-        print(i)
+    lista = []
+    for i in range(1, n):
+        if licznik_iteracji > wystapienia:
+            break
+        if i % liczba == 0:
+            lista.append(i)
+            licznik_iteracji += 1
+    return lista
 
 
-liczby_podzielne()
+wynik = liczby_podzielne(200, 30, 6)
+print(f'liczby podzielne to: {wynik}')
+
+print('')
 
 
-# 2. continue
-def continue_in_python():
-    for letter in 'Python':     # First Example
-        if letter == 'h':
-            continue
-        # instrukcja continue powoduje natychmiastowe przejście na górę pętli, gdy spełniony jest warunek,
-        # pozwala to na pominięcie elementu którego dotyczy warunek i kontynuowanie do końca iteracji
-        logging.info("iterujemy po literach, gdy dojdziemy do litery h, "
-                     "litera zostanie pominięta, wrócimy na górę pętli i iteracja bedzie kontynuowana do końca")
-        print('Current Letter :', letter)
+def liczby_podzielne2(n, liczba, wystapienia):
+    lista = []
+    for i in range(1, n + 1):
+        if i % liczba == 0:
+            lista.append(i)
+    print(lista[:wystapienia])
 
 
-continue_in_python()
-
-
+liczby_podzielne2(200, 6, 30)
