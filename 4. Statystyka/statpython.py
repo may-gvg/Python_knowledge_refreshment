@@ -33,11 +33,8 @@ expectancy_at_birth_list = [76.84878, 81.40732, 77.57895, 74.16341, 68.84907,
 
 no_of_elements = len(expectancy_at_birth_list)
 
-sum_of_age_element = 0
-for age in expectancy_at_birth_list:
-    sum_of_age_element = sum_of_age_element + age
 
-average_age = sum_of_age_element / no_of_elements
+average_age = sum(expectancy_at_birth_list) / no_of_elements
 
 print(f'{average_age = }')
 
