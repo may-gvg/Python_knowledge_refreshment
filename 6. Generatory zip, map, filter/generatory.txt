@@ -1,0 +1,8 @@
+  
+
+przejść mapowanie i filtrowanie dla rdd , rdd a sparkowy df różnice i dlaczego
+- map, apply map pandas z jupiterem, 
+- map filter, czy redukcja w pythonie
+- redukcja  
+- nauczyć się zipowania, po co sie to robi
+
