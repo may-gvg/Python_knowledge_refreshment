@@ -5,7 +5,7 @@ logging.basicConfig(filename='info.log', encoding='utf-8', level=logging.INFO)
 # 1. znajdz literę
 
 string = "Python"
-litera = input("podaj literę: ")
+litera = "o"
 
 
 def znajdz_litere(letter):
@@ -48,7 +48,8 @@ def liczby_podzielne2(n, liczba, wystapienia):
     for i in range(1, n + 1):
         if i % liczba == 0:
             lista.append(i)
-    print(lista[:wystapienia])
+    return lista[:wystapienia]
 
 
-liczby_podzielne2(200, 6, 30)
+wynik1 = liczby_podzielne2(200, 6, 30)
+print(f"Listy podzielne2 to: {wynik1}")
