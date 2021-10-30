@@ -5,7 +5,7 @@ logging.basicConfig(filename='info.log', encoding='utf-8', level=logging.INFO)
 # 1. znajdz literę
 
 string = "Python"
-litera = "o"
+letter = "o"
 
 
 def znajdz_litere(letter):
@@ -17,7 +17,7 @@ def znajdz_litere(letter):
         logging.info("nie znaleziono")
 
 
-znajdz_litere(litera)
+znajdz_litere(letter)
 
 print('')
 
