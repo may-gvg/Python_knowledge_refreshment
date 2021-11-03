@@ -1,0 +1,39 @@
+
+Pep 8
+Nazwy zmiennych 
+1)	Nazwy nie mogą zaczynać się od liczby.
+2)	Nie można używać spacji w nazwie, zamiast tego użyj _ (podkreślenia). 
+3)	Nie można używać następujących znaków: ' " , < > / ? | \ ( ) ! @ # $ % ^ & * ~ - + 
+4)	Nazwa zmiennych w snake_case
+5)	Nazwa zmiennych nie powinna być definiowana jako: x, y , c, i, I, itp., jak i odnosić się do elementów pythonowskich,
+    jak data, id, item, itp. Nazwa zmiennej powinna definiować opis czego zmienna się dotyczy
+6)	Bez polskich znaków 
+
+Nazwa Stałych
+1)	Nazwa stałych CAPS_SNAKE_CASE 
+
+Nazwy Klas:
+1)	Dla odróżnienia i tylko one, pisane są CamelCase  
+
+Wcięcie w bloku: 4 spacje, normalny tabulator daje 8 ten z pycharma 4
+Odstępy pomiędzy różnymi blokami kodu 2 linie 
+Brak pustych spacji 
+
+Formatowanie pycharm: CTRL + ALT + L – autoformatowanie kodu
+
+Importy u góry w kolejności alfabetycznej, najpierw:
+1)	Standardowe biblioteki 
+2)	Zewn biblioteki 
+3)	Lokalne biblioteki 
+
+Formatowanie pycharm importy: CTRL ALT + I
+
+
+Dlugość lini kodu do około 70 znaków,
+Komentowanie bloku pycharm: CTRL + /
+
+
+Zen of Python:
+ogólnie pisać prosty zrozumiały czytelny kod,
+gdzie czasem lepsze jest wrogiem dobrego,
+małe jest piękne i lepsze niż skomplikowane i co gorsza brzydkie
