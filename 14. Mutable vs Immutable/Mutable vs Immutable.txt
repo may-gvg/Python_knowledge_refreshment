@@ -1,0 +1,31 @@
+
+W Pythonie każdy obiekt ma te trzy atrybuty:
+
+id - Identity - Tożsamość –  odnosi się do adresu, do którego odwołuje się obiekt w pamięci komputera.
+
+Type — odnosi się do rodzaju tworzonego obiektu. Na przykład liczba całkowita, lista, łańcuch itp.
+
+Value : Wartość — odnosi się do wartości przechowywanej przez obiekt. Na przykład – List=[1,2,3] będzie zawierała
+wartości liczby 1,2 i 3
+
+Chociaż ID i type nie można zmienić po ich utworzeniu, wartości można zmienić dla obiektów typu Mutable.
+
+
+Obiekty wbudowanych typów jak (lista, set, dict) są mutowalne.
+ich wartość, stan jest możliwy do edycji po utworzeniu
+id się nie zmienia, dostaje update wartości
+
+
+Obiekty wbudowanych typów takich jak (int, float, bool, str, tuple, unicode) są niemutowalne.
+ich stan jest niezmienny po utworzeniu
+update zostaje utworzone nowe id
+
+
+
+Python inaczej obsługuje obiekty mutowalne i niemutowalne
+Immutable są szybciej dostępne, lżejsze dla pamięci
+Mutable są świetne do użycia, gdy musisz zmienić rozmiar obiektu, przykładową listę, słownik itp.
+Immutables są używane, gdy musisz upewnić się, że obiekt, który stworzyłeś, zawsze pozostanie taki sam,
+np. dane GPS.
+Edytowanie obiektów niemutowalnych wymaga stworzenia kopii.
+
