@@ -31,7 +31,7 @@ def liczby_podzielne(n, wystapienia, liczba):
     for i in range(1, n):
         if licznik_iteracji > wystapienia:
             break
-        if i % liczba == 0:
+        elif i % liczba == 0:
             lista.append(i)
             licznik_iteracji += 1
     return lista
